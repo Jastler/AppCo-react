@@ -1,0 +1,13 @@
+@import '../node_modules/modern-css-reset/src/reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+@import './components/MainPage/MainPage.scss';
+
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+  max-width: 90%;
+  margin: 0 auto;
+}

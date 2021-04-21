@@ -1,0 +1,35 @@
+.footer {
+  background-image: url('../../../images/background-footer.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+
+  &__form {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 25px;
+    max-width: 400px;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    line-height: 38px;
+  }
+
+  &__logo {
+    font-size: 32px;
+  }
+
+  &__copyright {
+    color: white;
+    text-decoration: none;
+  }
+}

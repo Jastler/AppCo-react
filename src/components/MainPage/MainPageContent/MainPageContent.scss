@@ -1,0 +1,24 @@
+.services {
+  text-align: center;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 400;
+
+    &_bold {
+      font-weight: 700;
+    }
+  }
+
+  &__text {
+    color: #7E7E7E;
+    font-size: 20px;
+  }
+
+  &__cards {
+    padding-top: 40px;
+    padding-bottom: 130px;
+    display: flex;
+    justify-content: center;
+  }
+}

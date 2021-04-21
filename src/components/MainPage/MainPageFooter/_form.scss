@@ -1,0 +1,29 @@
+.form {
+
+  &__input {
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    width: 100%;
+    padding: 25px 0 25px 10px;
+    height: 30px;
+
+    &::placeholder {
+      color: #B9B9B9;
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    top: 30px;
+    left: 257px;
+  }
+
+  &__submit {
+    color: white;
+    background: #3A80BA;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+  }
+}

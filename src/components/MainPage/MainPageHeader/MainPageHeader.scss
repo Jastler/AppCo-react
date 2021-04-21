@@ -1,0 +1,48 @@
+.header {
+  background-image: url('../../../images/background-header.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+
+  &__logo {
+    font-size: 40px;
+    padding: 24px 0 40px;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left {
+    max-width: 590px;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 24px;
+
+    &_bold {
+      font-weight: 700;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    padding-bottom: 40px;
+  }
+
+  &__link {
+    color: #3A80BA;
+    text-decoration: none;
+    background-color: white;
+    padding: 17px 32px;
+    border-radius: 8px;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
