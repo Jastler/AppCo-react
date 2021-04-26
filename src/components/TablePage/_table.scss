@@ -1,0 +1,29 @@
+.table {
+  
+  border-collapse: collapse;
+  border-radius: 8px;
+  
+  &__head {
+    color: white;
+    font-weight: 400;
+    padding: 10px 20px;
+    white-space: nowrap;
+    background-color: #3A80BA;
+    text-align: left;
+    border-left: 1px solid white;
+  }
+
+  &__row {
+    background-color: #FBFBFB;
+
+    &:nth-child(even) {
+      background-color: #F1F1F1;;
+    }
+  }
+
+  &__column {
+    border-left: 1px solid white;
+    padding: 10px 20px;
+  }
+  
+}

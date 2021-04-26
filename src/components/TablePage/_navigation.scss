@@ -1,0 +1,17 @@
+.navigation {
+  padding: 16px 0 24px;
+
+  &__link {
+    text-decoration: none;
+    padding: 0 5px;
+    color: #CCCCCC;
+
+    &_active {
+      color: #3A80BA;
+    }
+  }
+
+  &__arrow {
+    color: #CCCCCC;
+  }
+}

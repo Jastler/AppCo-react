@@ -1,0 +1,15 @@
+.page-footer {
+  background-color: #1C3B55;
+  color: white;
+  padding: 15px 0;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    line-height: 35px;
+  }
+
+  &__logo {
+    font-size: 24px;
+  }
+}

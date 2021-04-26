@@ -1,5 +1,6 @@
 import React from 'react';
-import image from '../../../images/mobile.png'
+import image from '../../../images/mobile.png';
+import { Link } from "react-router-dom";
 
 export const Header = () => (
   <header className="header">
@@ -19,9 +20,9 @@ export const Header = () => (
           <p className="header__text">
             Our design projects are fresh and simple and will benefit your business greatly. Learn more about our work!
           </p>
-          <a className="header__link" href="/">
+          <Link className="header__link" to="/stats">
             Views Stats
-          </a>
+          </Link>
         </div>
         <div className="header__right">
           <img src={image} alt="mobile"/>

@@ -1,0 +1,15 @@
+@import '../PageHeader/PageHeader.scss';
+@import '../PageFooter/PageFooter.scss';
+@import './navigation';
+@import './table';
+
+.table-page {
+  
+  &__title {
+    padding-bottom: 15px;
+  }
+
+  &__table {
+    margin-bottom: 25px;
+  }
+}
