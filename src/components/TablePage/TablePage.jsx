@@ -1,32 +1,50 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import classNames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import { PageHeader } from '../PageHeader';
 import { PageFooter } from '../PageFooter';
 import { Link } from "react-router-dom";
 
 
-export const TablePage = () => {
+export const TablePage = ({ match }) => {
   const [users, setUsers] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(+match.params.pageId || 1);
   const [tableLenth, setTableLength] = useState(0);
 
-  const usersUrl = `http://localhost:8000/api/users?page=${currentPage}&limit=50`;
-  const tableLength = 'http://localhost:8000/api/pages';
-  
+  const usersUrl = `https://app-co-server-taraschirkov.herokuapp.com/api/users`;
+  const tableLength = 'https://app-co-server-taraschirkov.herokuapp.com/api/pages';
+
   useEffect(() => {
     axios.get(tableLength).then((resp) => {
       const length = resp.data.data;
-      setTableLength(length[0]['COUNT(*)']/50);
+      setTableLength(length[0].count/50);
     });
   }, []);
 
   useEffect(() => {
-    axios.get(usersUrl).then((resp) => {
+    axios.get(`${usersUrl}?page=${currentPage}&limit=50`).then((resp) => {
       const users = resp.data.data;
       setUsers(users);
     });
   }, [currentPage]);
+
+  const nextPage = () => {
+    if (currentPage === 1) {
+      return;
+    }
+
+    setCurrentPage(currentPage - 1);
+  };
+
+  const prevPage = () => {
+    if (tableLenth === currentPage) {
+      return;
+    }
+    setCurrentPage(currentPage + 1);
+  }
 
   return (
     <>
@@ -38,7 +56,7 @@ export const TablePage = () => {
               Main page
             </Link>
             <span className="navigation__arrow">
-              &#5171;
+              <FontAwesomeIcon icon={faChevronRight} /> 
             </span>
             <Link className="navigation__link navigation__link_active" to="/stats">
               User satistics
@@ -66,39 +84,70 @@ export const TablePage = () => {
               </thead>
               <tbody>
                 {users.map(user => (
-                  <tr key={user.id} className="table__row">
-                    <td className="table__column">{user.user_id}</td>
-                    <td className="table__column">{user.first_name}</td>
-                    <td className="table__column">{user.last_name}</td>
-                    <td className="table__column">{user.email}</td>
-                    <td className="table__column">{user.gender}</td>
-                    <td className="table__column">{user.ip_address}</td>
+                  <tr key={user.user_id} className="table__row">
+                    <td className="table__column">
+                      <Link className="table__link" to={`/info/${user.user_id}`}>
+                        {user.user_id}
+                      </Link>
+                    </td>
+                    <td className="table__column">
+                      <Link className="table__link" to={`/info/${user.user_id}`}>
+                        {user.first_name}
+                      </Link>
+                    </td>
+                    <td className="table__column">
+                      <Link className="table__link" to={`/info/${user.user_id}`}>
+                        {user.last_name}
+                      </Link>
+                    </td>
+                    <td className="table__column">
+                      <Link className="table__link" to={`/info/${user.user_id}`}>
+                        {user.email}
+                      </Link>
+                    </td>
+                    <td className="table__column">
+                      <Link className="table__link" to={`/info/${user.user_id}`}>
+                        {user.gender}
+                      </Link>
+                    </td>
+                    <td className="table__column">
+                      <Link className="table__link" to={`/info/${user.user_id}`}>
+                        {user.ip_address}
+                      </Link>
+                    </td>
+                    <td className="table__column">
+                      <Link className="table__link" to={`/stats/${user.user_id}`}>
+                        {user.total_clicks}
+                      </Link>
+                    </td>
+                    <td className="table__column">
+                      <Link className="table__link" to={`/stats/${user.user_id}`}>
+                        {user.total_page_views}
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>
           </table>
-          <button
-            type="button"
-            onClick={() => {
-              if (currentPage === 1) {
-                return;
-              }
-              setCurrentPage(currentPage - 1)
-            }}
-          >
-            &lt; 
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              if (tableLenth === currentPage) {
-                return;
-              }
-              setCurrentPage(currentPage + 1)
-            }}
-          >
-            &gt;
-          </button>
+          <div className="table-page__buttons">
+            <Link to={`/stats/${currentPage - 1}`} className={classNames(
+              'table-page__button-arrow', {'table-page__button-arrow_active': currentPage !== 1},
+              )}
+              onClick={nextPage}
+            >
+              <FontAwesomeIcon icon={faChevronLeft} /> 
+            </Link>
+            <div className="table-page__button">
+              {currentPage}
+            </div>
+            <Link to={`/stats/${currentPage + 1}`} className={classNames(
+              'table-page__button-arrow', {'table-page__button-arrow_active': currentPage !== tableLenth},
+              )}
+              onClick={prevPage}
+            >
+              <FontAwesomeIcon icon={faChevronRight} /> 
+            </Link>
+          </div>
         </div>
       </div>
       <PageFooter />

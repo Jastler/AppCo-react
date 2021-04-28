@@ -12,4 +12,52 @@
   &__table {
     margin-bottom: 25px;
   }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  &__button {
+    border: 2px solid #F1F1F1;
+    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+
+  &__button-arrow {
+    font-size: 38px;
+    user-select: none; 
+    padding: 10px;
+    cursor: not-allowed;
+    color: #F1F1F1;
+
+    &_active {
+      cursor: pointer;
+      color: #3A80BA;
+    }
+  }
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+table tr:first-child th:first-child {
+  border-top-left-radius: 12px;
+}
+
+table tr:first-child th:last-child {
+  border-top-right-radius: 12px;
 }

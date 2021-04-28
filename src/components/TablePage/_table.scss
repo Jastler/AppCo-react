@@ -1,7 +1,6 @@
 .table {
-  
+  width: 100%;
   border-collapse: collapse;
-  border-radius: 8px;
   
   &__head {
     color: white;
@@ -22,8 +21,14 @@
   }
 
   &__column {
+    text-decoration: none;
+    color: black;
     border-left: 1px solid white;
     padding: 10px 20px;
   }
-  
+
+  &__link {
+    text-decoration: none;
+    color: black;
+  }
 }
