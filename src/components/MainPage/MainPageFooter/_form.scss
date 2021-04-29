@@ -17,13 +17,21 @@
     position: absolute;
     top: 30px;
     left: 257px;
-  }
-
-  &__submit {
     color: white;
     background: #3A80BA;
     border: none;
     padding: 10px 30px;
     border-radius: 8px;
+  }
+  
+}
+
+@media screen and (max-width: 1024px) {
+  .form {
+    &__submit {
+      position: relative;
+      top: 10px;
+      left: 40px;
+    }
   }
 }

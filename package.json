@@ -1,6 +1,6 @@
 {
   "name": "app-co",
-  "homepage": "http://jastler.github.io/AppCo-react",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

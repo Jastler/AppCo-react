@@ -4,7 +4,7 @@
 @import './table';
 
 .table-page {
-  
+  overflow: scroll;
   &__title {
     padding-bottom: 15px;
   }

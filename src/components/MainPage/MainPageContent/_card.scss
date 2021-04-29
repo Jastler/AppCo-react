@@ -21,3 +21,17 @@
     color: #7E7E7E;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .card {
+    padding: 20px;
+    margin-bottom: 40px;
+
+    &__img {
+      max-width: 70px;
+      padding-bottom: 20px;
+    }
+  }
+
+  
+}

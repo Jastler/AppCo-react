@@ -46,3 +46,46 @@
     }
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .header {
+    background-image: none  ;
+    background-color: #255D8B;
+
+    &__logo {
+      font-size: 30px;
+    }
+
+    &__info {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__title {
+      font-size: 38px;
+      text-align: center;
+      font-weight: 400;
+      margin-bottom: 14px;
+  
+      &_bold {
+        font-weight: 700;
+      }
+    }
+
+    &__right {
+      display: none;
+    }
+
+    &__text {
+      text-align: center;
+    }
+    &__button {
+      align-self: center;
+    }
+    &__link {
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+  }
+}

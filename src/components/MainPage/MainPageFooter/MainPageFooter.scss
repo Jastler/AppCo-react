@@ -33,3 +33,25 @@
     text-decoration: none;
   }
 }
+
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    background-image: none  ;
+    background-color: #255D8B;
+
+    &__form {
+      max-width: 230px;
+    }
+
+    &__copyright {
+      display: block;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}

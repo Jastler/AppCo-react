@@ -25,7 +25,11 @@ export const Header = () => (
           </Link>
         </div>
         <div className="header__right">
-          <img src={image} alt="mobile"/>
+          <img
+            className="header__img"
+            src={image}
+            alt="mobile"
+          />
         </div>
       </div>
     </div>
