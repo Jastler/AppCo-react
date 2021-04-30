@@ -8,7 +8,6 @@ import { PageHeader } from '../PageHeader';
 import { PageFooter } from '../PageFooter';
 import { Link } from "react-router-dom";
 
-
 export const TablePage = ({ match }) => {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(+match.params.pageId || 1);
